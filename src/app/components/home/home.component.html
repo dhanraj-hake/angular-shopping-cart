@@ -1,0 +1,69 @@
+
+<mat-toolbar class="flex justify-between nav-bg-color">
+    <div>
+        <h1>Shop</h1>
+    </div>
+
+    <div>
+        <button class="tbutton myp-4" [matMenuTriggerFor]="menu">
+
+            <mat-icon class="" [matBadge]="itemNumbers"
+            [matBadgeHidden] = "!itemNumbers"
+             >add_shopping_cart</mat-icon>
+        </button>
+    </div> 
+
+    <mat-menu #menu="matMenu" class="cart-menu-list">
+        <div class="myp-4 flex justify-between">
+            <span>{{itemNumbers}} Items</span>
+            <a  routerLink="/cart" class="link-style" >
+                
+                <button class="btn btn-info">
+                    View Cart
+                </button>
+            </a>
+        </div>
+        <div>
+            <hr>
+        </div>
+
+        
+
+        <div *ngFor="let item of cart.items" class="myp-4 flex justify-between">
+            {{item.name.slice(0,10)}} X {{item.quantity}}
+            <span> {{ item.price | currency: 'INR' }} </span>
+        </div>
+        
+
+
+        <div>
+            <hr>
+        </div>
+        
+        <div class="myp-4 flex justify-between">
+            Total
+            <span> {{ getTotal() | currency: 'INR' }} </span>
+        </div>
+
+        <div>
+            <hr>
+        </div>
+
+        <div class="myp-4 flex justify-between">
+            <button class="btn btn-danger ">
+                <!-- <mat-icon (click)="clearCart()" class="round-button text-red">remove_shopping_cart</mat-icon> -->
+                Clear
+            </button>
+
+            <button class="btn btn-success">
+                <!-- <mat-icon class="round-button text-green">shopping_cart</mat-icon> -->
+                Shop
+            </button>
+        </div>
+
+    </mat-menu>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+

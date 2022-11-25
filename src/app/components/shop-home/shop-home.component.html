@@ -1,0 +1,42 @@
+<mat-drawer-container [autosize]="true"  class="home-container">
+    <!-- <mat-drawer mode="side" opened class="side-nav">
+        <app-filter (categoresSend)="onCategore($event)" ></app-filter>
+    </mat-drawer> -->
+
+    <mat-drawer-container class="home-content">
+        <!-- <app-shopnav (showItemEvent)="onShowItem($event)" (dsiplayItemEvent)="onChangeLayout($event)" ></app-shopnav> -->
+        <app-shopnav 
+        (dsiplayItemEvent)="onChangeLayout($event)"
+        (orderEvent) = "oerderOfProducts($event)"
+        (showItemEvent) = "onShowItem($event)"
+        (categoryEvent) = "onCategore($event)"
+         ></app-shopnav>
+        
+        <div class="product-list">
+
+            <mat-grid-list
+            gutterSize="15"
+            [rowHeight] = "height"
+            [cols]="col"
+            >
+
+          
+              <mat-grid-tile *ngFor="let product of products">
+                    <app-product-box [product]="product"  [col]="col"></app-product-box>
+            </mat-grid-tile>
+              
+             
+              
+
+
+
+            </mat-grid-list>
+
+
+        </div>
+
+
+    </mat-drawer-container>
+    
+
+</mat-drawer-container>

@@ -1,0 +1,33 @@
+<mat-card class="text-center m-4">
+    <div [class.full-screen]="col==1" [class.box]="col>=3" [class.box-flex]="col>=3" [class.full-mode-box]="col==1">
+
+        <div>
+            <img class="image" [src]="product.image" alt="" >
+        </div>
+        <div [class.card-1]="col==1" class="text-center">
+
+            <div class="title ">
+                {{product.title.slice(0,20)}}
+            </div>
+
+            <div *ngIf="col>=3" class="desc p-2">
+                {{product.description.slice(0,30)}}
+            </div>
+
+            <div *ngIf="!(col>=3)" class="desc p-2">
+                {{product.description}}
+            </div>
+
+            <div class="flex justify-between p-2">
+                <span>
+                    {{ product.price | currency : 'INR' }}
+                </span>
+
+
+                <mat-icon (click)="addToCart()" >add_shopping_cart</mat-icon>
+
+            </div>
+        </div>
+
+    </div>
+</mat-card>

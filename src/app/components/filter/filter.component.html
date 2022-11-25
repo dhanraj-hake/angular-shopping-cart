@@ -1,0 +1,17 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <!-- <button mat-button>Categiris</button> -->
+        <mat-panel-title>Categores</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-selection-list [multiple]="false">
+
+        <mat-list-option *ngFor="let categore of categores">
+            <button (click)="sendCategores(categore)" mat-menu-item>{{categore}}</button>
+        </mat-list-option>
+
+        
+
+    </mat-selection-list>
+
+</mat-expansion-panel>

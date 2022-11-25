@@ -1,0 +1,62 @@
+<mat-card class="shop-nav mt-2">
+
+    <div class="flex justify-between">
+        <div class="flex">
+
+
+             <!-- Catagary -->
+             <div class="mx-2">
+                
+                <button mat-button [matMenuTriggerFor]="categoryMenu">Category</button>
+
+                <mat-menu #categoryMenu="matMenu">
+
+                    <button (click)="sendCategores(category)"  mat-menu-item *ngFor="let category of categorys">
+                        {{category | titlecase }}
+                    </button>
+
+                </mat-menu>
+        
+            </div>
+
+
+            <!-- Sorting Products -->
+            <div class="mx-4">
+                <button mat-button [matMenuTriggerFor]="sortMenu">Sort By {{order}}</button>
+        
+                <mat-menu #sortMenu="matMenu">
+        
+                    <button (click) = "orderOfResult('asc')" class="" mat-menu-item>Asending</button>
+        
+                    <button (click) = "orderOfResult('desc')" mat-menu-item>Desending</button>
+        
+                </mat-menu>
+        
+            </div>
+        </div>
+
+
+
+    <div class="flex">
+        <button mat-button [matMenuTriggerFor]="showItem"> Show Items {{showItems}}</button>
+
+        <mat-menu  #showItem="matMenu">
+
+            <button (click)="changeShowItem(10)" mat-menu-item>10</button>
+            <button (click)="changeShowItem(15)" mat-menu-item>15</button>
+            <button (click)="changeShowItem(20)" mat-menu-item>20</button>
+
+        </mat-menu>
+
+        <div>
+
+                <mat-icon (click)="onDisplayItems(1)" class="p-2">view_list</mat-icon>
+                <mat-icon *ngIf="!hideThreeGrid" (click)="onDisplayItems(3)" class="p-2">view_module</mat-icon>
+                <mat-icon *ngIf="!hideSixGrid" (click)="onDisplayItems(4)" class="p-2">view_quilt</mat-icon>
+            
+        </div>
+
+    </div>
+    </div>
+
+</mat-card>

@@ -1,0 +1,75 @@
+<div class="cart container pt-4">
+    <mat-card *ngIf="cart.items.length">
+
+        <div class="flex justify-between mb-2">
+            <a routerLink="/home" >
+                <button class="btn btn-primary">Home</button>
+            </a> 
+            <button (click)="clearCart()"  class="btn btn-danger">Clear Cart</button>
+        </div>
+        <div class="table">
+   
+        <table class="table">
+            <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody> 
+          <tr *ngFor="let item of cart.items">
+
+              <td class="" > <img [src]="item.product" alt="" width="100px" class="cart-image"> </td>
+              <td class="pt-5">{{item.name.slice(0,20)}}</td>
+            <td class="pt-5">  
+                <span>
+                    <mat-icon (click)="reduceQuantity(item)">remove</mat-icon> 
+                    <span class="p-2">{{item.quantity}} </span> 
+                    <mat-icon (click)="addQuantity(item)" >add</mat-icon>
+                </span>
+            
+            </td>
+            <td class="pt-5"> {{item.price | currency : 'INR' }} </td>
+            <td class="pt-5"> 
+                <button (click)="removeItem(item)" type="button" class="btn-close" aria-label="Close"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="flex justify-between">
+        <div></div>
+        <div>
+
+          <span class="inline-block py-4 mx-5 px-4">
+
+            Total : {{getTotal() | currency : 'INR' }}
+          </span>
+
+          <a routerLink="/place-order">
+            <button class="btn bg-success text-white mt-4">Check Out</button>
+          </a>
+
+        </div>
+      </div>
+    </div>
+    </mat-card>
+
+    <mat-card *ngIf="!cart.items.length">
+        <h4>No Items In Cart </h4>
+        <a routerLink="/home">
+            <button class="btn btn-primary">Home</button>
+        </a>
+    </mat-card>
+
+    <div class="pop-up-form">
+      <div class="form">
+        <form>
+          
+        </form>
+      </div>
+    </div>
+
+</div>

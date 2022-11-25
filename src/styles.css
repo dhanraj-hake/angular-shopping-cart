@@ -1,0 +1,168 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tbutton{
+    width: 100px;
+    height: 40px;
+    border: none;
+    background: transparent;
+}
+
+.myp-4{
+    padding: 6px;
+}
+
+.mym-4{
+    margin: 6px;
+}
+
+.myp-2{
+    padding: 4px;
+}
+
+.myp-5{
+    padding: 8px;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+
+
+.side-nav{
+    padding: 8px;
+}
+
+.home-content{
+    height: 90vh;
+}
+
+.shop-nav{
+    margin: 4px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.link-style{
+    text-decoration: none;
+    color: black;
+}
+.cart-menu-list{
+    width: 250px;
+}
+
+.text-red{
+    color: red;
+}
+
+.text-green{
+    color: green;
+}
+
+.round-button{
+    border: none;
+    display: inline;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.bg-gray{
+    background-color: rgb(194, 194, 194);
+}
+
+.product-list{
+    margin: 10px;
+    padding: 5px;
+}
+
+.cart{
+    overflow: hidden;
+    padding: 4px;
+}
+
+.d-none{
+    display: none;
+}
+
+.full-screen{
+    width:65vw;
+    display: flex;
+}
+
+.card-1{
+    width: 100%;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home-button{
+    background: transparent ;
+}
+
+.image{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.box{
+    width: 20vw;
+    height: 45vh;
+}
+
+.box-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.full-mode-box{
+    height: 250px;
+}
+.cart-image{
+    height: 100px;
+}
+
+.nav-bg-color{
+    background-color: #9ea8b9;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+
+
+
+@media (max-width:450px) {
+
+    .full-screen{
+        width:25vw;
+    }
+    .image{
+        width:50px;
+    }
+}
